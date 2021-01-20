@@ -5,16 +5,16 @@ A chore application to help organize ones chores and keep track of tasks at hand
 This app allow users to catelog their chores and keep tract of work to be done and work that has been done. Users are able to add new chores, edit those chores, mark the chores that have been completed and delete chores that they no longer need.
 
 The API holds all of the users chores and has them readyly availible when the user needs them. Please read the instructions below for more information.
-Client-side link: // Vercel link here
+Client-side link: https://pc-client-three.vercel.app/
 
-Client-Side
-//here
+API-Side
+https://lit-savannah-09158.herokuapp.com/
 
 Deployment Platform
 Heroku
 
 Languages/Tools
-JavaScript, Node.js, Express.js, Knex.js, PostgreSQL, Nodemon, Postgrator, HTML5, CSS3
+JavaScript, React, Node.js, Express.js, Knex.js, PostgreSQL, Nodemon, Postgrator, HTML5, CSS3
 
     Loggers: Morgan, Winston
     Securities: CORS, Helmet
