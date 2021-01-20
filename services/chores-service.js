@@ -9,7 +9,7 @@ function createChore(db, values) {
   .returning('*')
 };
 
-function getChore(db) {
+function getChore(db, chore_id) {
   return db.from('chores')
   .select('*')
   .where({ chore_id })

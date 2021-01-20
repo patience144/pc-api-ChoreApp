@@ -20,11 +20,14 @@ ChoresRouter.route('/chores')
 
 ChoresRouter.route('/chores/:id')
   .get((req, res) => {
-    const chore_id = req.params.id;
-    ChoresService.getChore(req.db)
+    const db = req.app.get('db');
+    const chore_id = Number(req.params.id);
+    ChoresService.getChore(db, chore_id)
       .then(result => {
         if (!result) res.status(400).send({error: 'Invalid data.'});
-      });
+        return res.json(result);
+      })
+      .catch(error => console.log({ error }));
   })
   .patch((req, res) => {
     const db = req.app.get('db');
