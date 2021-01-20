@@ -1,4 +1,5 @@
 const supertest = require('supertest');
+const chai = require('chai');
 const { expect } = require('chai');
 const knex = require('knex');
 const app = require('../index');
