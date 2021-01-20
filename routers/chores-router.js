@@ -3,7 +3,7 @@ const ChoresService = require('../services/chores-service')
 
 const ChoresRouter = express.Router();
 
-ChoresRouter.route('/chores')
+ChoresRouter.route('/api/chores')
     .get((req, res) => {
         const db = req.app.get('db');
         ChoresService.getChores(db)
@@ -14,11 +14,11 @@ ChoresRouter.route('/chores')
       const { name } = req.body;
       ChoresService.createChore(db, {name})
         .then(chores => {
-          return res.json(chores[0]);
+          return res.status(201).send(chores[0]);
       })
     })
 
-ChoresRouter.route('/chores/:id')
+ChoresRouter.route('/api/chores/:id')
   .get((req, res) => {
     const db = req.app.get('db');
     const chore_id = Number(req.params.id);
@@ -39,7 +39,7 @@ ChoresRouter.route('/chores/:id')
     })
     ChoresService.editChore(db, chore_id, values)
       .then(chores => {
-        return res.json(chores[0]);
+        return res.status(201).send(chores[0]);
     })
   })
   .delete((req, res) => {
