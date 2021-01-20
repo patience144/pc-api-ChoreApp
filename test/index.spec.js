@@ -43,14 +43,14 @@ describe('The App', () => {
       return supertest(app)
         .get('/api/chores')
         .expect(200)
-        .expect(res => expect(res.body).to.be.an('array'));
+        .then(res => expect(res.body).to.be.an('array'));
     });
     it('POST /api/chores responds with 201 status and an object.', () => {
       return supertest(app)
         .post('/api/chores')
         .send(chore)
         .expect(201)
-        .expect(res => expect(res.body).to.be.an('object'));
+        .then(res => expect(res.body).to.be.an('object'));
 
     });
     it('PATCH /api/chores/:choreID responds with 201 status and an object.', () => {
