@@ -1,5 +1,4 @@
 const express = require('express');
-const ChoresService = require('../services/chores-service')
 
 const LandingRouter = express.Router();
 
